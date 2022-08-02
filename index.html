@@ -4,28 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css" />
     <title>Awesome Book</title>
   </head>
   <body>
     <h1>Awesome Book Library</h1>
     <table>
-      <thead>
-        <tr>
-          <td>Book Title</td>
-          <td>Book Author</td>
-        </tr>
-      </thead>
       <tbody class="tbody" id="tbody"></tbody>
     </table>
 
-    <form action="#" method="POST">
-      <input type="text" placeholder="Title" id="title" required />
-      <br />
-      <input type="text" placeholder="Author" id="author" required />
-      <br />
-      <button>Add</button>
-    </form>
+    <div class="divider"></div>
+    <div class="formDiv">
+      <h2>Add a new book</h2>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Title" id="title" required />
+        <br />
+        <input type="text" placeholder="Author" id="author" required />
+        <br />
+        <button>Add</button>
+      </form>
+    </div>
 
     <script src="script/main.js"></script>
   </body>

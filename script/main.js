@@ -50,6 +50,7 @@ class BooksToDom {
 
     tableRow.innerHTML = `
     <td>${book.author}</td>
+    <td>by</td>
     <td>${book.title}</td>
     <td><a href="#" class='RemoveBtn'>Remove</a></td>
     `;
@@ -89,6 +90,6 @@ document.querySelector('#tbody').addEventListener('click', (e) => {
   BooksToDom.deleteBook(e.target);
 
   Storage.removeBooksFromStorage(
-    e.target.parentElement.previousElementSibling.textContent,
+    e.target.parentElement.previousElementSibling.textContent
   );
 });
