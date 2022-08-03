@@ -1,5 +1,12 @@
 /* eslint-disable max-classes-per-file */
 const form = document.querySelector('form');
+const navlist = document.querySelector('.nav-list');
+const navadd = document.querySelector('.nav-add');
+const navcontact = document.querySelector('.nav-contact');
+const mainAddBook = document.querySelector('.main-addBook');
+const mainList = document.querySelector('.main-list');
+const mainContactUs = document.querySelector('.main-contactus');
+
 class Book {
   constructor(title, author) {
     this.title = title;
