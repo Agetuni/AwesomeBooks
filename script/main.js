@@ -127,7 +127,7 @@ document.querySelector('#tbody').addEventListener('click', (e) => {
   BooksToDom.deleteBook(e.target);
 
   Storage.removeBooksFromStorage(
-    e.target.parentElement.previousElementSibling.textContent
+    e.target.parentElement.previousElementSibling.textContent,
   );
   Storage.checkEmptyList();
 });
