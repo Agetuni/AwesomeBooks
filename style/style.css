@@ -66,6 +66,7 @@ form input {
 
 .nav-item {
   float: left;
+  font-size: 13px;
 }
 
 .nav-item a {
@@ -75,6 +76,20 @@ form input {
   padding: 14px 16px;
   text-decoration: none;
   border: none;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.nav-item a:active {
+  color: green;
+  text-decoration: none;
+}
+
+.left-border {
+  border-right: 1px solid black;
 }
 
 nav {
