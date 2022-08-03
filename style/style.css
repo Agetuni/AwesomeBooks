@@ -1,0 +1,52 @@
+table {
+  border: 2px black solid;
+  border-collapse: collapse;
+  width: 35%;
+  margin: auto;
+}
+
+table td {
+  padding-left: 5px;
+  border-collapse: collapse;
+}
+
+table tr:nth-child(odd) {
+  background-color: grey;
+  color: white;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  float: right;
+  margin: 5px 5px;
+  border: solid 2px black;
+  padding: 3px 6px;
+}
+
+.divider {
+  width: 10%;
+  height: 3px;
+  background-color: black;
+  margin: 40px auto;
+}
+
+.formDiv {
+  width: 45%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form button {
+  display: flex;
+  margin: 5px 0 0 auto;
+}
