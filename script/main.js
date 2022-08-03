@@ -6,6 +6,24 @@ const navcontact = document.querySelector('.nav-contact');
 const mainAddBook = document.querySelector('.main-addBook');
 const mainList = document.querySelector('.main-list');
 const mainContactUs = document.querySelector('.main-contactus');
+const mainEmpty = document.querySelector('.main-empty');
+
+document.querySelector('time').innerHTML = new Date().toLocaleString();
+navlist.addEventListener('click', () => {
+  mainList.classList.remove('hide');
+  mainAddBook.classList.add('hide');
+  mainContactUs.classList.add('hide');
+});
+navadd.addEventListener('click', () => {
+  mainList.classList.add('hide');
+  mainAddBook.classList.remove('hide');
+  mainContactUs.classList.add('hide');
+});
+navcontact.addEventListener('click', () => {
+  mainList.classList.add('hide');
+  mainAddBook.classList.add('hide');
+  mainContactUs.classList.remove('hide');
+});
 
 class Book {
   constructor(title, author) {
@@ -43,9 +61,19 @@ class Storage {
 
     localStorage.setItem('books', JSON.stringify(books));
   }
+
+  static checkEmptyList() {
+    const books = Storage.domBooksListFromStorage();
+    if (books.length === 0) {
+      mainEmpty.classList.remove('hide');
+    } else {
+      mainEmpty.classList.add('hide');
+    }
+  }
 }
 class BooksToDom {
   static displayBooksInDom() {
+    Storage.checkEmptyList();
     const books = Storage.domBooksListFromStorage();
 
     books.forEach((book) => BooksToDom.domBooksList(book));
@@ -90,6 +118,8 @@ form.addEventListener('submit', (e) => {
 
   Storage.addBooksToStorage(book);
 
+  Storage.checkEmptyList();
+
   BooksToDom.clearField();
 });
 
@@ -97,6 +127,7 @@ document.querySelector('#tbody').addEventListener('click', (e) => {
   BooksToDom.deleteBook(e.target);
 
   Storage.removeBooksFromStorage(
-    e.target.parentElement.previousElementSibling.textContent,
+    e.target.parentElement.previousElementSibling.textContent
   );
+  Storage.checkEmptyList();
 });

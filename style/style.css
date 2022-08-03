@@ -90,6 +90,10 @@ nav span {
   border: 1px black solid;
 }
 
+.main-empty {
+  text-align: center;
+}
+
 time {
   float: right;
 }
